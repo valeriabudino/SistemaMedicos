@@ -71,7 +71,7 @@ namespace Datos
         }
         public static int Insertar(Medico medico)
         {
-            string insertSQL = "INSERT dbo.Medico(Nombre, Apellido,NroMatricula,EspecialidadId) VALUES(@Nombre, @Apellido, @NroMatricula,@EspecialidadIds)";
+            string insertSQL = "INSERT dbo.Medico(Nombre, Apellido,NroMatricula,EspecialidadId) VALUES(@Nombre, @Apellido, @NroMatricula,@EspecialidadId)";
             SqlCommand command = new SqlCommand(insertSQL, AdminDB.ConetarDB());
             command.Parameters.Add("@Nombre", SqlDbType.VarChar, 50).Value = medico.Nombre;
             command.Parameters.Add("@Apellido", SqlDbType.VarChar, 50).Value = medico.Apellido;
@@ -81,6 +81,36 @@ namespace Datos
             int filasAfectadas = command.ExecuteNonQuery();
             AdminDB.ConetarDB().Close();
 
+            return filasAfectadas;
+        }
+        public static int Eliminar(int id)
+        {
+            string consulta = "DELETE FROM dbo.Medico WHERE Id = @Id";
+
+            SqlDataAdapter adapter = new SqlDataAdapter(consulta, AdminDB.ConetarDB());
+
+            adapter.SelectCommand.Parameters.Add("@Id", SqlDbType.Int).Value = id;
+            int filasAfectadas = adapter.SelectCommand.ExecuteNonQuery();
+
+            AdminDB.ConetarDB().Close();
+            return filasAfectadas;
+        }
+
+        public static int Modificar(Medico medico)
+        {
+            string consulta = "UPDATE dbo.Medico SET Nombre = @Nombre ,Apellido = @Apellido,NroMatricula = @NroMatricula, EspecialidadId = @EspecialidadId WHERE Id = @Id";
+
+
+            SqlDataAdapter adapter = new SqlDataAdapter(consulta, AdminDB.ConetarDB());
+            adapter.SelectCommand.Parameters.Add("@Nombre", SqlDbType.VarChar, 50).Value = medico.Nombre;
+            adapter.SelectCommand.Parameters.Add("@Apellido", SqlDbType.VarChar, 50).Value = medico.Apellido;
+            adapter.SelectCommand.Parameters.Add("@NroMatricula", SqlDbType.Int).Value = medico.NroMatricula;
+            adapter.SelectCommand.Parameters.Add("@EspecialidadId", SqlDbType.Int, 50).Value = medico.EspecialidadId;
+            adapter.SelectCommand.Parameters.Add("@Id", SqlDbType.Int).Value = medico.Id;
+
+            int filasAfectadas = adapter.SelectCommand.ExecuteNonQuery();
+
+            AdminDB.ConetarDB().Close();
             return filasAfectadas;
         }
 

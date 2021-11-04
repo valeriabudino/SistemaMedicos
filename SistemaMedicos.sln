@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsMedicos", "WindowsMe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datos", "Datos\Datos.csproj", "{D78BBC26-3A56-4FC7-85D1-259C543EE527}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebMedicos", "WebMedicos\WebMedicos.csproj", "{6569F918-ED05-4AB5-9895-6C2BE9B8D26E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{D78BBC26-3A56-4FC7-85D1-259C543EE527}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D78BBC26-3A56-4FC7-85D1-259C543EE527}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D78BBC26-3A56-4FC7-85D1-259C543EE527}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6569F918-ED05-4AB5-9895-6C2BE9B8D26E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6569F918-ED05-4AB5-9895-6C2BE9B8D26E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6569F918-ED05-4AB5-9895-6C2BE9B8D26E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6569F918-ED05-4AB5-9895-6C2BE9B8D26E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

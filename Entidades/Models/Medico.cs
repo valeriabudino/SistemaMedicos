@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Entidades.Models
 {
     public class Medico
-    { public Medico() { }
+    {   public Medico() { }
         public Medico(string nombre, string apellido, int nroMatricula, int especialidadId)
         {
             Nombre = nombre;
